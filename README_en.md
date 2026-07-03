@@ -24,7 +24,7 @@ Good-Pickleball, Good-Tennis, and Good-Badminton are part of the same family of 
 
 ### 🎬 Video Analysis Results
 
-| RTMPose Pose Detection | YOLO26s Person Detection |
+| YOLO26s Person Detection | RTMPose Pose Detection |
 | --- | --- |
 | ![YOLO26s person detection demo](assets/yolo26s_detect_demo.gif) | ![RTMPose pose detection demo](assets/rtmpose_detect_demo.gif) |
 
@@ -118,20 +118,6 @@ PowerShell:
 pip uninstall -y torch torchvision onnxruntime
 pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 --index-url https://download.pytorch.org/whl/cu121
 pip install onnxruntime-gpu==1.20.1
-```
-
-Verify GPU availability:
-
-```bash
-python -c "import torch; print('torch:', torch.__version__); print('cuda:', torch.cuda.is_available()); print('gpu:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'not available')"
-python -c "import onnxruntime as ort; print(ort.__version__); print(ort.get_available_providers())"
-```
-
-Expected output:
-
-```text
-cuda: True
-CUDAExecutionProvider
 ```
 
 Switch back to CPU dependencies:

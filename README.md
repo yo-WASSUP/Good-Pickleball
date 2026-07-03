@@ -24,7 +24,7 @@ Good-Pickleball、Good-Tennis 和 Good-Badminton 是同一类计算机视觉运�
 
 ### 🎬 视频分析结果
 
-| RTMPose 姿态检测 | YOLO26s 人体检测 |
+| YOLO26s 人体检测 | RTMPose 姿态检测 |
 | --- | --- |
 | ![YOLO26s 人体检测演示](assets/yolo26s_detect_demo.gif) | ![RTMPose 姿态检测演示](assets/rtmpose_detect_demo.gif) |
 
@@ -118,20 +118,6 @@ PowerShell：
 pip uninstall -y torch torchvision onnxruntime
 pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 --index-url https://download.pytorch.org/whl/cu121
 pip install onnxruntime-gpu==1.20.1
-```
-
-验证 GPU 是否生效：
-
-```bash
-python -c "import torch; print('torch:', torch.__version__); print('cuda:', torch.cuda.is_available()); print('gpu:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'not available')"
-python -c "import onnxruntime as ort; print(ort.__version__); print(ort.get_available_providers())"
-```
-
-期望看到：
-
-```text
-cuda: True
-CUDAExecutionProvider
 ```
 
 切回 CPU 版：
